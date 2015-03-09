@@ -1,4 +1,4 @@
 class BucketListItem < ActiveRecord::Base
-  it { should belong_to :activity }
-  it { should belong_to :traveller }
+  belongs_to :activity 
+  belongs_to :traveller
 end

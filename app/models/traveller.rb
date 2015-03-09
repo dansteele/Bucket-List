@@ -7,6 +7,10 @@ class Traveller < ActiveRecord::Base
 
   after_create :send_welcome_email
 
+  has_many :bucket_list_items
+  has_many :activities, :through => :bucket_list_items
+  has_many :destinations, :through => :activities
+
   private
   def send_welcome_email
     Devise::Mailer.welcome(self).deliver_now
