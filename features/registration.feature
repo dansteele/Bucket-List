@@ -7,5 +7,5 @@ Feature: Registration
     When I complete the form with valid details
       And I submit the form
     Then I should have an account
-      And I should recieve a welcome email
       And I should see "Welcome aboard" in the flash notice
+      And I should recieve a welcome email
