@@ -1,5 +1,5 @@
 Given(/^I am on the homepage$/) do
-  visit root_path
+  visit bucket_list_path
 end
 
 Given(/^I go to the sign\-up page$/) do
