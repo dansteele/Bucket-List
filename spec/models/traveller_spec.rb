@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Traveller, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it {should have_many :bucket_list_items}
+  it {should have_many :activites, :through => :bucket_list_items}
+  it {should have_many :destinations, :through => :activities}
 end
