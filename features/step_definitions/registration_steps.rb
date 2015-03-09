@@ -13,7 +13,7 @@ When(/^I complete the form with valid details$/) do
 end
 
 When(/^I submit the form$/) do
-  click_on "Sign up"
+  click_button "Sign up"
 end
 
 Then(/^I should have an account$/) do
