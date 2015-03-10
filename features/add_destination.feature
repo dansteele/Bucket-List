@@ -8,7 +8,7 @@ Feature: Destinations
     When they add a destination
     Then it should appear on the page
 
-  @wip @javascript
+  @javascript
   Scenario: A traveller adds an activity to a destination on their bucket list
     Given some destinations with some bucketlist items
       And a traveller who has added an item to their bucketlist
