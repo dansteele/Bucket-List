@@ -10,5 +10,6 @@ When(/^they add a destination$/) do
 end
 
 Then(/^it should appear on the page$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page.has_content? 'India').to be true
+  expect(page.has_css? 'img[src="http://example.org/img.jpg"]').to be true
 end

@@ -5,6 +5,8 @@
     %li
       = render activity
 
+%ul#destinations
+
 #add-destination
   = form_for @destination do |f|
     %fieldset
@@ -15,4 +17,4 @@
       = f.label :image_url, "Image URL"
       = f.text_field :image_url
 
-    = f.submit "Add Destination"
+    = f.submit "Add Destination", :id => "add-destination-button"

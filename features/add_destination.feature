@@ -1,6 +1,6 @@
 Feature: Destinations
 
-  @wip
+  @javascript
   Scenario: A traveller adds a destinations to their bucketlist
     Given some destinations with some bucketlist items
       And a traveller who has added an item to their bucketlist

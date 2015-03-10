@@ -1,0 +1,15 @@
+$(document).ready(function() { 
+  $('#add-destination-button').click(function(event){  
+    event.preventDefault();
+    $.ajax({
+      url: '/destinations',
+      type: 'POST',
+      data: $('form').serialize(),
+      success: onServerResponse
+    })
+
+    function onServerResponse(html) {
+      $('#destinations').append(html)
+    }
+  })
+})
