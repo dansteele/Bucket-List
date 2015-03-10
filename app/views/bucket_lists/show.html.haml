@@ -6,6 +6,20 @@
       = render activity
 
 %ul#destinations
+  - @destinations.each do |destination|
+    %li.destination{:id => ["destination", destination.id]}
+      .activities
+        - # put newly created activity in here
+      .add-activity
+        = form_for @activity do |f|
+          %fieldset
+            = f.label :name
+            = f.text_field :name
+          %fieldset
+            = f.label :image_url, "Image URL"
+            = f.text_field :image_url
+          = f.hidden_field :destination_id, :value => destination.id
+          = f.submit "Add Activity", :class => "add-activity-button"
 
 #add-destination
   = form_for @destination do |f|
@@ -17,4 +31,4 @@
       = f.label :image_url, "Image URL"
       = f.text_field :image_url
 
-    = f.submit "Add Destination", :id => "add-destination-button"
+    = f.submit "Add Destination", :id => "add-destination-button"   

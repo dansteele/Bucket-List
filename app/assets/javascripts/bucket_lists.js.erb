@@ -5,11 +5,27 @@ $(document).ready(function() {
       url: '/destinations',
       type: 'POST',
       data: $('form').serialize(),
-      success: onServerResponse
+      dataType: "html",
+      success: addDestinationAsync
     })
 
-    function onServerResponse(html) {
+    function addDestinationAsync(html) {
       $('#destinations').append(html)
+    }
+  })
+  $('.add-activity-button').click(function(event){  
+    event.preventDefault();
+    _this = this
+    $.ajax({
+      url: '/activities',
+      type: 'POST',
+      data: $(this).closest('form').serialize(),
+      dataType: "html",
+      success: addActivityAsync
+    })
+
+    function addActivityAsync(html) {
+      $(_this).closest('li').find('.activities').append(html)
     }
   })
 })

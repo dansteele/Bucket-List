@@ -4,7 +4,6 @@ class DestinationsController < ApplicationController
     @destination = Destination.create!(allowed_params)
 
     render :partial => "destinations/destination", :locals => { :destination => @destination }
-    # redirect_to bucket_list_path
   end
 
   private
