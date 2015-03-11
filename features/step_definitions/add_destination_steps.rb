@@ -30,3 +30,7 @@ Then(/^they see their activity under the relevant destination$/) do
     expect(page.has_css? 'img[src="http://example.org/spag.jpg"]').to be true
   end
 end
+
+Then(/^the activity is stored in the traveller's bucket list$/) do
+  expect(@traveller.reload.activities.length > 1).to be true
+end
