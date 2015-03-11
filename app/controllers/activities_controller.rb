@@ -1,8 +1,12 @@
 class ActivitiesController < ApplicationController
 
   def create
-    @activity = Activity.create(allowed_params)
-    render @activity
+    # @dest_id = params[:activity][:destination_id]
+    @activity = Activity.create!(allowed_params)
+    # binding.pry
+
+    # render @activity
+    # render :js
   end
 
   private

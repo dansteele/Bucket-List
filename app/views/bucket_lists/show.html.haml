@@ -2,22 +2,25 @@
 
 
 %ul#destinations
-  - @traveller_destinations.each do |destination|
+  - @destinations.each do |destination|
     %li.destination{:id => ["destination", destination.id]}
-      %ol.activities
-        - destination.activities.each do |activity|
-          %li
-            = render activity
-      .add-activity
-        = form_for @activity, remote: true do |f|
-          %fieldset
-            = f.label :name
-            = f.text_field :name
-          %fieldset
-            = f.label :image_url, "Image URL"
-            = f.text_field :image_url
-          = f.hidden_field :destination_id, :value => destination.id
-          = f.submit "Add Activity", :class => "add-activity-button"
+      %h2= destination.name
+      %img{:src => destination.image_url}
+        %ol.activities
+          - destination.activities.each do |activity|
+            %li
+              = render activity
+        .add-activity
+          %h3 Add Activity
+          = form_for @activity, remote: true do |f|
+            %fieldset
+              = f.label :name
+              = f.text_field :name
+            %fieldset
+              = f.label :image_url, "Image URL"
+              = f.text_field :image_url
+            = f.hidden_field :destination_id, :value => destination.id
+            = f.submit "Add Activity", :class => "add-activity-button"
 
 #add-destination
   = form_for @destination, remote: true do |f|

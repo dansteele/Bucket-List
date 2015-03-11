@@ -4,6 +4,7 @@ class BucketListsController < ApplicationController
     @activities = current_traveller.activities.includes(:destination)
     @activity = Activity.new
     @destination = Destination.new
+    @destinations = Destination.all
     @traveller_destinations = current_traveller.destinations
     # @destinations = Destination.all
   end
