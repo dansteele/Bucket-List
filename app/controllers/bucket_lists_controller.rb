@@ -6,7 +6,6 @@ class BucketListsController < ApplicationController
     @destinations = Destination.all
     @traveller_destinations = current_traveller.destinations
     # @destinations = Destination.all
-    binding.pry
   end
 
 
