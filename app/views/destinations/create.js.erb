@@ -1,9 +1,15 @@
 // Append new destination
+
 $('#destinations').append('<%= escape_javascript(render @destination) %>').
 find(".destination:last-child").hide().fadeIn(function() {
-  // Add form
+  addActivityForm('#destinations :last-child')
 })
 
+function addActivityForm(target) {
+  $(target).append(
+    '<%= escape_javascript(render partial: "activities/new_activity.html.haml", locals: {destination: @destination}) %>'
+    )
+}
 // Set flash notice
 $('#flash .notice').html("Your destination <%= @destination.name %> was added.")
 
