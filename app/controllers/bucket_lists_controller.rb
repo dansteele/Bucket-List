@@ -1,6 +1,7 @@
 class BucketListsController < ApplicationController
 
   def show
+    @traveller = current_traveller.email.gsub(/@.+/, "").titleize
     @activities = current_traveller.activities.includes(:destination).order(:destination_id)
     @destination = Destination.new
     @destinations = Destination.all

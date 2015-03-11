@@ -1,4 +1,4 @@
-%h2 My Amazing Bucket List
+%h2= "#{@traveller}'s Bucket List"
 
 
 
@@ -6,7 +6,7 @@
   - @traveller_destinations.each do |destination|
     %li.destination{:id => ["destination", destination.id]}
       %h2= destination.name
-      %img{:src => destination.image_url}
+      %img.bucket-image-large{:src => destination.image_url}
         %ol.activities
           - destination.activities.each do |activity|
             = render activity
