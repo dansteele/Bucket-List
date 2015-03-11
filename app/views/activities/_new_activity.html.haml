@@ -1,0 +1,13 @@
+%h3 Add Activity
+= form_for make_activity(destination), remote: true do |f|
+  %fieldset
+    = f.label :name
+    = f.text_field :name
+  %fieldset
+    = f.label :image_url, "Image URL"
+    = f.text_field :image_url
+  = f.hidden_field :destination_id, :value => destination.id
+  = f.fields_for :bucket_list_items do |b|
+    = b.hidden_field :traveller_id 
+
+  = f.submit "Add Activity", :class => "add-activity-button"
