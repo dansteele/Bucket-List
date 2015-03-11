@@ -26,8 +26,7 @@ When(/^I sign in$/) do
   click_on "Log in"
 end
 
-Then(/^I should see only my own bucketlist$/) do
-  save_and_open_page
+Then(/^I should see only my own bucketlist$/) do#
   expect(page.has_content?(@italy.name)).to be true
   expect(page.has_content?(@drive_ferrari.name)).to be true
 
