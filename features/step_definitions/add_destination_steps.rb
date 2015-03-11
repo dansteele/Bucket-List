@@ -32,5 +32,5 @@ Then(/^they see their activity under the relevant destination$/) do
 end
 
 Then(/^the activity is stored in the traveller's bucket list$/) do
-  expect(@traveller.reload.activities.length > 1).to be true
+  expect(@traveller.reload.activities.length).to eq 2
 end

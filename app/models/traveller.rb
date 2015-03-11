@@ -9,7 +9,7 @@ class Traveller < ActiveRecord::Base
 
   has_many :bucket_list_items
   has_many :activities, :through => :bucket_list_items
-  has_many :destinations, :through => :activities
+  has_many :destinations, -> {uniq}, :through => :activities
 
   private
   def send_welcome_email

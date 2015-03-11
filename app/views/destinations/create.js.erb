@@ -1,6 +1,8 @@
 // Append new destination
 $('#destinations').append('<%= escape_javascript(render @destination) %>').
-find(".destination:last-child").hide().fadeIn()
+find(".destination:last-child").hide().fadeIn(function() {
+  // Add form
+})
 
 // Set flash notice
 $('#flash .notice').html("Your destination <%= @destination.name %> was added.")
