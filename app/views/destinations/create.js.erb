@@ -1,0 +1,9 @@
+// Append new destination
+$('#destinations').append('<%= escape_javascript(render @destination) %>').
+find(".destination:last-child").hide().fadeIn()
+
+// Set flash notice
+$('#flash .notice').html("Your destination <%= @destination.name %> was added.")
+
+// Clear the form
+$('.new_destination input[type="text"]').val('')

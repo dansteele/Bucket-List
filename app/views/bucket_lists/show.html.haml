@@ -9,7 +9,7 @@
           %li
             = render activity
       .add-activity
-        = form_for @activity do |f|
+        = form_for @activity, remote: true do |f|
           %fieldset
             = f.label :name
             = f.text_field :name
@@ -20,7 +20,7 @@
           = f.submit "Add Activity", :class => "add-activity-button"
 
 #add-destination
-  = form_for @destination do |f|
+  = form_for @destination, remote: true do |f|
     %fieldset
       = f.label :name
       = f.text_field :name
