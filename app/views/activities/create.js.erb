@@ -2,5 +2,7 @@ $('#destination_<%= @activity.destination_id %> .activities').append("<%= j(rend
 find("li:last-child").hide().fadeIn()
 
 $('#flash .notice').html("Your activity <%= @activity.name %> was added.")
-
 $('.new_activity input[type="text"]').val("")
+
+map.addMarker("<%= @activity.location %>", <%= "#{@activity.latitude}, #{@activity.longitude}"%>)
+map.fitView(map.LatLngList)

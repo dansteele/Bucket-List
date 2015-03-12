@@ -1,7 +1,31 @@
-$(document).ready(function() { 
+function BucketListMap(lat, lng, zoom_level) {
+  this.center = new google.maps.LatLng(lat, lng);
+  this.zoom_level = zoom_level;
+}
 
-  var map_canvas = $('#map-canvas')
-  var map = new google.maps.Map();
+BucketListMap.prototype.fitView = function(latLngList) {
+  var bounds = new google.maps.LatLngBounds();
+  var LtLgLen = latLngList.length
+  for (var i = 0; i < LtLgLen; i++) {
+    bounds.extend(latLngList[i]);
+  }
+  map.map.fitBounds(bounds);
+}
+
+BucketListMap.prototype.drawMap = function(jquerySelector) {
+  var map_options = {
+    center: this.center,
+    zoom: this.zoom_level
+  }
+  var map_canvas = $(jquerySelector)[0]
+  this.map = new google.maps.Map(map_canvas, map_options);
+}
 
 
-});
+BucketListMap.prototype.addMarker = function(title, lat, lng) {
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(lat, lng),
+    map: this.map,
+    title: title
+  })
+}

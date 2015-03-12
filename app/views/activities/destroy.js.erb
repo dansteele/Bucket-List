@@ -1,3 +1,4 @@
-$('#activity_<%= @id %>').fadeOut(function{
-  this.hide()
+$('#activity_<%= @id %>').fadeOut(function() {
+  console.log("Hiding: " + '#activity_<%= @id %>')
+  $('#activity_<%= @id %>').hide()
 })

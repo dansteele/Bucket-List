@@ -6,6 +6,10 @@
   %fieldset
     = f.label :image_url, "Image URL"
     = f.text_field :image_url
+  %fieldset
+    = f.label :location
+    = f.text_field :location
+
   = f.hidden_field :destination_id, :value => destination.id
   = f.fields_for :bucket_list_items do |b|
     = b.hidden_field :traveller_id 

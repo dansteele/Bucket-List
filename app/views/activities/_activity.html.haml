@@ -1,4 +1,5 @@
 %li.activity{:id => ["activity", activity.id]}
   %h3= activity.name
+  %h4= activity.location
   = image_tag activity.image_url, alt: activity.name, :class => "bucket-image-small"
   = link_to "Remove", activity_path(activity), :method => :delete, :remote => true

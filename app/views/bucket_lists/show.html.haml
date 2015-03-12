@@ -1,5 +1,5 @@
 %h2= "#{@traveller.guess_name}'s Bucket List"
-
+= render partial: "activities/load_markers.html.erb", locals: {activities: @activities}
 #map-canvas
 
 %ul#destinations
