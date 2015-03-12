@@ -32,3 +32,10 @@ main {
   border-radius: 8px;
   border: 1px #444 solid;
 }
+
+#map-canvas {
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
+}

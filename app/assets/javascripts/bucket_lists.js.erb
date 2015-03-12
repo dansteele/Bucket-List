@@ -1,31 +1,7 @@
-// $(document).ready(function() { 
-//   $('#add-destination-button').click(function(event){  
-//     event.preventDefault();
-//     $.ajax({
-//       url: '/destinations',
-//       type: 'POST',
-//       data: $('form').serialize(),
-//       dataType: "html",
-//       success: addDestinationAsync
-//     })
+$(document).ready(function() { 
 
-//     function addDestinationAsync(html) {
-//       $('#destinations').append(html)
-//     }
-//   })
-//   $('.add-activity-button').click(function(event){  
-//     event.preventDefault();
-//     _this = this
-//     $.ajax({
-//       url: '/activities',
-//       type: 'POST',
-//       data: $(this).closest('form').serialize(),
-//       dataType: "html",
-//       success: addActivityAsync
-//     })
+  var map_canvas = $('#map-canvas')
+  var map = new google.maps.Map();
 
-//     function addActivityAsync(html) {
-//       $(_this).closest('li').find('.activities').append(html)
-//     }
-//   })
-// })
+
+});
