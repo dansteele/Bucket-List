@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'devise'
 gem "twitter-bootstrap-rails"
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'
