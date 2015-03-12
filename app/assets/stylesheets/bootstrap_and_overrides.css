@@ -34,6 +34,11 @@ main {
   border: 1px #444 solid;
 }
 
+#add-destination {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
 #map-canvas {
   width: 40%;
   height: 70%;
