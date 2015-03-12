@@ -4,5 +4,5 @@ find("li:last-child").hide().fadeIn()
 $('#flash .notice').html("Your activity <%= @activity.name %> was added.")
 $('.new_activity input[type="text"]').val("")
 
-map.addMarker("<%= @activity.location %>", <%= "#{@activity.latitude}, #{@activity.longitude}"%>)
+map.addMarker("<%= @activity.location %>", <%= "#{@activity.latitude}, #{@activity.longitude}"%>,'#destination_<%= @activity.destination_id %>')
 map.fitView(map.LatLngList)
