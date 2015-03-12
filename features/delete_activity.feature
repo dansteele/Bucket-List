@@ -7,6 +7,6 @@ Feature: Delete Activity
       And they have signed in
       And they add an activity
     When they see their activity under the relevant destination
-      And they press the "Delete Activity" link
+      And they press the "Remove" link
     Then the activity disappears from the page
       And the traveller no longer has that activity
