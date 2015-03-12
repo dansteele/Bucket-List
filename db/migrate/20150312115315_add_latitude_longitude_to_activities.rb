@@ -1,0 +1,6 @@
+class AddLatitudeLongitudeToActivities < ActiveRecord::Migration
+  def change
+    add_column :activities, :latitude, :decimal
+    add_column :activities, :longitude, :decimal
+  end
+end
