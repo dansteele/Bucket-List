@@ -22,10 +22,14 @@ BucketListMap.prototype.drawMap = function(jquerySelector) {
 }
 
 
-BucketListMap.prototype.addMarker = function(title, lat, lng) {
+BucketListMap.prototype.addMarker = function(title, lat, lng, id) {
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(lat, lng),
     map: this.map,
     title: title
+  })
+  google.maps.event.addListener(marker, 'click', function(){
+    newUrl = String(window.location).replace(/#.+/g, "")
+    window.location = (newUrl+ id)
   })
 }
