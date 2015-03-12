@@ -11,6 +11,10 @@ class Traveller < ActiveRecord::Base
   has_many :activities, :through => :bucket_list_items
   has_many :destinations, -> {uniq}, :through => :activities
 
+  def guess_name
+    self.email.gsub(/@.+/, "").titleize
+  end
+
   private
   def send_welcome_email
     Devise::Mailer.welcome(self).deliver_now
