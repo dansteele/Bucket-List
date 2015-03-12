@@ -1,0 +1,8 @@
+%li.destination{:id => ["destination", destination.id]}
+  %h2= destination.name
+  %img.bucket-image-large{:src => destination.image_url}
+    %ol.activities
+      - destination.activities.each do |activity|
+        = render activity
+    .add-activity
+      = render partial: "activities/new_activity.html.haml", locals: {destination: destination}

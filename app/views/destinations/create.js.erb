@@ -1,6 +1,6 @@
 // Append new destination
 
-$('#destinations').append('<%= escape_javascript(render @destination) %>').
+$('#destinations').append('<%= escape_javascript(render partial: "destinations/list_destination.html.haml", locals: {destination: @destination} ) %>').
 find(".destination:last-child").hide().fadeIn(function() {
   addActivityForm('#destinations :last-child')
 })

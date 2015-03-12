@@ -4,14 +4,7 @@
 
 %ul#destinations
   - @traveller_destinations.each do |destination|
-    %li.destination{:id => ["destination", destination.id]}
-      %h2= destination.name
-      %img.bucket-image-large{:src => destination.image_url}
-        %ol.activities
-          - destination.activities.each do |activity|
-            = render activity
-        .add-activity
-          = render partial: "activities/new_activity.html.haml", locals: {destination: destination}
+    = render partial: "destinations/list_destination.html.haml", locals: {destination: destination} 
 
 #add-destination
   = form_for @destination, remote: true do |f|
