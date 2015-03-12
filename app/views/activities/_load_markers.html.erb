@@ -4,7 +4,7 @@
     map.drawMap('#map-canvas')
     var LatLngList = []
     <% @activities.each do |activity| %> 
-      map.addMarker("<%= activity.location %>", <%= "#{activity.latitude}, #{activity.longitude}"%>)
+      map.addMarker("<%= activity.location %>", <%= "#{activity.latitude}, #{activity.longitude}"%>, '#destination_<%= activity.destination_id %>')
       var markerObj = new google.maps.LatLng(<%= "#{activity.latitude}, #{activity.longitude}"%>)
       LatLngList.push(markerObj)
       map.LatLngList = LatLngList
