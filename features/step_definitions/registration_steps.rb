@@ -7,6 +7,7 @@ Given(/^I go to the sign\-up page$/) do
 end
 
 When(/^I complete the form with valid details$/) do
+  fill_in "Name", with: "Dan"
   fill_in "Email", with: "danielsteele@dangarland.co.uk"
   fill_in "Password", with: "password1"
   fill_in "Password confirmation", with: "password1"
