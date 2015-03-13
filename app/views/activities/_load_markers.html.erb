@@ -1,14 +1,16 @@
 <script>  
   $(document).ready(function() {
-    map = new BucketListMap(<%= "#{@activities.first.latitude}, #{@activities.first.longitude}"%>, 9)
-    map.drawMap('#map-canvas')
-    var LatLngList = []
-    <% @activities.each do |activity| %> 
-      map.addMarker("<%= activity.location %>", <%= "#{activity.latitude}, #{activity.longitude}"%>, '#destination_<%= activity.destination_id %>')
-      var markerObj = new google.maps.LatLng(<%= "#{activity.latitude}, #{activity.longitude}"%>)
-      LatLngList.push(markerObj)
-      map.LatLngList = LatLngList
-      map.fitView(LatLngList)
+    <% if @activities.count > 0 %>
+      map = new BucketListMap(<%= "#{@activities.first.latitude}, #{@activities.first.longitude}"%>, 9)
+      map.drawMap('#map-canvas')
+      var LatLngList = []
+      <% @activities.each do |activity| %> 
+        map.addMarker("<%= activity.location %>", <%= "#{activity.latitude}, #{activity.longitude}"%>, '#destination_<%= activity.destination_id %>')
+        var markerObj = new google.maps.LatLng(<%= "#{activity.latitude}, #{activity.longitude}"%>)
+        LatLngList.push(markerObj)
+        map.LatLngList = LatLngList
+        map.fitView(LatLngList)
+      <% end %>
     <% end %>
   });
 </script>
