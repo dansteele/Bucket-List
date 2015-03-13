@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def index
-    @travellers = Travellers.all
+    @travellers = Traveller.all
   end
 
 end
