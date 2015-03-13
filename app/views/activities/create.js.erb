@@ -5,4 +5,6 @@ $('#flash .notice').html("Your activity <%= @activity.name %> was added.")
 $('.new_activity input[type="text"]').val("")
 
 map.addMarker("<%= @activity.location %>", <%= "#{@activity.latitude}, #{@activity.longitude}"%>,'#destination_<%= @activity.destination_id %>')
+var markerObj = new google.maps.LatLng(<%= "#{@activity.latitude}, #{@activity.longitude}"%>)
+map.LatLngList.push(markerObj)
 map.fitView(map.LatLngList)
