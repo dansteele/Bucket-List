@@ -23,4 +23,5 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
