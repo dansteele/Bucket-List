@@ -22,5 +22,5 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers', require: false
   gem 'selenium-webdriver'
-
+  gem 'factory_girl_rails'
 end
