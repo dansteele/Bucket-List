@@ -10,6 +10,10 @@ body{
   background-color: #E9EAED;
 }
 
+li {
+  list-style: none
+}
+
 main {
   margin-left: auto;
   margin-right: 50%;
