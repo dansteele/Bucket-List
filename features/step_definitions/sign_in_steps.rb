@@ -11,7 +11,7 @@ Given(/^some destinations with some bucketlist items$/) do
 end
 
 Given(/^a traveller who has added an item to their bucketlist$/) do
-  @traveller = Traveller.create!(:email => "test@example.com", 
+  @traveller = Traveller.create!(:name => "Dan", :email => "test@example.com", 
     :password => "password", :password_confirmation => "password")
   @traveller.activities << @drive_ferrari
 end
@@ -21,6 +21,7 @@ Given(/^I am on the sign in page$/) do
 end
 
 When(/^I sign in$/) do
+  fill_in "Name", :with => @traveller.name
   fill_in "Email", :with => @traveller.email
   fill_in "Password", :with => @traveller.password
   click_on "Log in"
