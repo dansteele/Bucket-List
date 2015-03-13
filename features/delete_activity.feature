@@ -1,6 +1,6 @@
 Feature: Delete Activity
 
-  @wip @javascript
+  @javascript
   Scenario: A traveller can delete their own activities
     Given some destinations with some bucketlist items
       And a traveller who has added an item to their bucketlist
