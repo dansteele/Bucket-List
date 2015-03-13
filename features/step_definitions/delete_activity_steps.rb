@@ -1,6 +1,6 @@
 When(/^they press the "(.*?)" link$/) do |link|
-  binding.pry
-  click_link link
+  @activity_count = @traveller.activities.count
+  first('.activity').click_link link
 end
 
 Then(/^the activity disappears from the page$/) do
@@ -8,5 +8,5 @@ Then(/^the activity disappears from the page$/) do
 end
 
 Then(/^the traveller no longer has that activity$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(@activity_count - 1).to eq(@traveller.activities.count)
 end
