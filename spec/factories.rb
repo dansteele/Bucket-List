@@ -5,4 +5,17 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+
+  factory :activity do
+    name {Faker::Lorem.words(2)}
+    image_url {Faker::Avatar.image}
+    location {Faker::Address.city}
+    destination
+  end
+
+  factory :destination do
+    name {Faker::Address.country}
+    image_url {Faker::Avatar.image}
+  end
+  
 end
