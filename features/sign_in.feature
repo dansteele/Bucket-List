@@ -1,5 +1,5 @@
 Feature: Sign in
-
+  
   Scenario: A traveller logs in and sees only their own destinations and to-do items
     Given some destinations with some bucketlist items
       And a traveller who has added an item to their bucketlist
