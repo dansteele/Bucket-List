@@ -22,13 +22,12 @@ Given(/^these travellers have activities at some destinations$/) do
 end
 
 
-Given(/^I am on the "(.*?)" page$/) do |arg1|
-  binding.pry
-  pending # express the regexp above with the code you wish you had
+Given(/^I am on the "(.*?)" page$/) do |page|
+  visit send("#{page}_path".to_sym)
 end
 
-When(/^I press the first link$/) do
-  pending # express the regexp above with the code you wish you had
+When(/^I press the first link in the "(.*?)"$/) do |location|
+  first("#{location} .a").click
 end
 
 Then(/^I should see that traveller's public Bucket List$/) do
