@@ -1,4 +1,8 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :bucket_list_items_comment do
+    traveller_id 1
+bucket_list_items_id 1
+  end
+
   factory :traveller do
     name {Faker::Name.name}
     email  {Faker::Internet.email}
