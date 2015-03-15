@@ -1,12 +1,4 @@
-FactoryGirl.define do  factory :bucket_list_items_comment do
-    traveller_id 1
-bucket_list_items_id 1
-comment "MyString"
-  end
-  factory :bucket_list_items_comment do
-    comment_id 1
-bucket_list_items_id 1
-  end
+FactoryGirl.define do
 
   factory :traveller do
     name {Faker::Name.name}
