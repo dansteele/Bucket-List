@@ -6,6 +6,28 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+
+header {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  min-width: 500px;
+}
+
+#sessions {
+  text-align: right;
+  margin: 10px;
+}
+
+a {
+  color: #3199f9;
+}
+
+.page-selection {
+  color: red;
+  text-decoration: none;
+}
+
 body{
   background-color: #E9EAED;
 }
