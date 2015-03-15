@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resource :bucket_list, :only => [:show]
   resources :destinations, :only => [:create]
   resources :activities, :only => [:create, :show, :destroy]
-  resources :profiles, :only => [:index]
+  resources :profiles, :only => [:index, :show]
 end

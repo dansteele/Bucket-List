@@ -2,4 +2,4 @@
   %tbody
     - @travellers.each do |traveller|
       %tr
-        %td= traveller.name
+        %td= link_to traveller.name, profile_path(traveller)        

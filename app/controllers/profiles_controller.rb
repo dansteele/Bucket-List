@@ -4,4 +4,8 @@ class ProfilesController < ApplicationController
     @travellers = Traveller.all
   end
 
+  def show
+    @traveller = Traveller.find(params[:id])
+  end
+
 end
