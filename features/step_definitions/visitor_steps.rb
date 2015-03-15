@@ -31,5 +31,7 @@ When(/^I click on the first traveller result$/) do
 end
 
 Then(/^I should see that traveller's public Bucket List$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page.has_content? @traveller1.name).to be true
+  expect(page.has_content? @traveller1.activities.first.name).to be true
+  expect(page.has_content? @traveller1.activities.first.destination.name).to be true
 end
