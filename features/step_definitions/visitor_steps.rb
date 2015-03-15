@@ -26,8 +26,8 @@ Given(/^I am on the "(.*?)" page$/) do |page|
   visit send("#{page}_path".to_sym)
 end
 
-When(/^I press the first link in the "(.*?)"$/) do |location|
-  first("#{location} .a").click
+When(/^I click on the first traveller result$/) do
+  page.find('td', :text => @traveller1.name).click_link(@traveller1.name)
 end
 
 Then(/^I should see that traveller's public Bucket List$/) do

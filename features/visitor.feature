@@ -11,5 +11,5 @@ Feature: Visitor
     Given some travellers exist
       And these travellers have activities at some destinations
       And I am on the "profiles" page
-    When I press the first link in the "body"
+    When I click on the first traveller result
     Then I should see that traveller's public Bucket List
