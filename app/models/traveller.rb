@@ -8,6 +8,9 @@ class Traveller < ActiveRecord::Base
   after_create :send_welcome_email
 
   has_many :bucket_list_items
+
+  has_many :comments
+
   has_many :activities, :through => :bucket_list_items
   has_many :destinations, -> {uniq}, :through => :activities
 
