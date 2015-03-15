@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :comment do
+    comment "MyString"
+  end
+
 
   factory :traveller do
     name {Faker::Name.name}
