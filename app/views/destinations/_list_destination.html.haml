@@ -4,5 +4,6 @@
     %ol.activities
       - destination.activities.each do |activity|
         = render activity
-    .add-activity
-      = render partial: "activities/new_activity.html.haml", locals: {destination: destination}
+    - unless @is_viewer
+      .add-activity
+        = render partial: "activities/new_activity.html.haml", locals: {destination: destination}

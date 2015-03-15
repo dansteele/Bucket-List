@@ -20,6 +20,7 @@
 <header>
 <%= link_to "Sign up", new_traveller_registration_path %>
 <%= link_to "Sign in", new_traveller_session_path %>
+<%= link_to "Sign out", destroy_traveller_session_path, method: :DELETE %>
 <%= link_to "Bucket Lists", profiles_path %>
 </header>
 

@@ -6,15 +6,16 @@
   - @traveller_destinations.each do |destination|
     = render partial: "destinations/list_destination.html.haml", locals: {destination: destination} 
 
-#add-destination
-  %h3 Add destination
-  = form_for @destination, remote: true do |f|
-    %fieldset
-      = f.label :name
-      = f.text_field :name
+- unless @is_viewer
+  #add-destination
+    %h3 Add destination
+    = form_for @destination, remote: true do |f|
+      %fieldset
+        = f.label :name
+        = f.text_field :name
 
-    %fieldset
-      = f.label :image_url, "Image URL"
-      = f.text_field :image_url
+      %fieldset
+        = f.label :image_url, "Image URL"
+        = f.text_field :image_url
 
-    = f.submit "Add Destination", :id => "add-destination-button"
+      = f.submit "Add Destination", :id => "add-destination-button"
