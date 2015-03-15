@@ -1,0 +1,20 @@
+%h2= "#{@traveller.name}'s Bucket List"
+= render partial: "activities/load_markers.html.erb", locals: {activities: @activities}
+#map-canvas
+
+%ul#destinations
+  - @traveller_destinations.each do |destination|
+    = render partial: "destinations/list_destination.html.haml", locals: {destination: destination} 
+
+#add-destination
+  %h3 Add destination
+  = form_for @destination, remote: true do |f|
+    %fieldset
+      = f.label :name
+      = f.text_field :name
+
+    %fieldset
+      = f.label :image_url, "Image URL"
+      = f.text_field :image_url
+
+    = f.submit "Add Destination", :id => "add-destination-button"
