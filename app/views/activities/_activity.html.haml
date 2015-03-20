@@ -4,3 +4,12 @@
   = image_tag activity.image_url, alt: activity.name, :class => "bucket-image-small"
   - unless @is_viewer
     = link_to "Remove", activity_path(activity), :method => :delete, :remote => true
+  / .comments-show= link_to "Show comments", "#", :id => ["activity", activity.id, "comments"]
+  /   = form_for make_comment(activity), remote: true do |f|
+  /     %fieldset
+  /       = f.label :content
+  /       = f.text_field :content
+
+  /     = f.hidden_field :traveller_id, :value => @traveller.id
+
+  /     = f.submit "Add Comment", :class => "add-comment-button"
